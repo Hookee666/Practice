@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框</title>
+    <style>
+
+    </style>
+    <script>
+        window.onload=function () {
+           var oBtn1 = document.getElementById('ipt1');
+           var oBtn2 = document.getElementById('ipt2');
+           var oBtn3 = document.getElementById('ipt3');
+           var oDiv = document.getElementById('div');
+           var oCh = oDiv.getElementsByTagName('input');
+            oBtn1.onclick = function () {
+              for(var i=0;i<oCh.length;i++){
+                   oCh[i].checked = true;
+               }
+           }
+           oBtn2.onclick = function () {
+              for(var i=0;i<oCh.length;i++){
+                   oCh[i].checked = false;
+               }
+           }
+           oBtn3.onclick = function () {
+                for(var i=0;i<oCh.length;i++){
+                    if( oCh[i].checked == true){
+                        oCh[i].checked = false;
+                    }else {
+                        oCh[i].checked =true;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input id="ipt1" type="button" value="全选"><br>
+<input id="ipt2" type="button" value="全不选"><br>
+<input id="ipt3" type="button" value="反选"><br>
+<div id="div">
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+</div>
+
+</body>
+</html>

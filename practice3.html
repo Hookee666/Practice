@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        #div1 .active{ background: yellow; }
+        #div1 div{
+            width: 200px;
+            height: 200px;
+            border: 1px black solid;
+            background-color: cadetblue;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var oDiv = document.getElementById('div1');
+            var oBtn = oDiv.getElementsByTagName('input');
+            var aDiv = oDiv.getElementsByTagName('div');
+                for(var i=0;i<oBtn.length;i++){
+                    oBtn[i].index=i; //给每个input标签添加一个index属性；
+                    oBtn[i].onclick=function () {
+                        for(var i=0;i<oBtn.length;i++){
+                            oBtn[i].className='';
+                            aDiv[i].style.display='none';
+                        }
+                        this.className='active';  //注意this指向当前发生事件的元素
+                        aDiv[this.index].style.display='block';
+
+                     }
+                }
+
+        }
+    </script>
+</head>
+<body>
+<div id="div1">
+    <input class="active" type="button" value="教育" >  <!--不能在标签中添加HTML中没有的属性，但可以在JS中添加-->
+    <input type="button" value="培训" >
+    <input type="button" value="招生" >
+    <input type="button" value="出国" >
+<div style="display: block">1111</div>
+<div>2222</div>
+<div>3333</div>
+<div>4444</div>
+</div>
+</body>
+</html>

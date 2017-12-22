@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插入新元素</title>
+    <script>
+        window.onload=function () {
+            var oBtn = document.getElementById('idv');
+            var oUl = document.getElementById('ul1');
+            var oTxt = document.getElementById('txt');
+            oBtn.onclick = function () {
+                var oLi = document.createElement('li');
+                var aLi = document.getElementsByTagName('li');
+//              oUl.appendChild(oLi);
+                oUl.insertBefore(oLi,aLi[0])
+                oLi.innerHTML=oTxt.value;
+            }
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+<input id="txt" type="text">
+<input id="idv" type="button"  value="添加"/>
+<ul id="ul1">
+</ul>
+</body>
+</html>
